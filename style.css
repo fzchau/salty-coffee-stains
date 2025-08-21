@@ -99,6 +99,7 @@ header{
 }
 
 .left-side, .right-side{
+  cursor: pointer;
   flex: 1;
   display: flex;
   justify-content: center;
@@ -270,13 +271,13 @@ header{
 }
 
 footer{
+  position: relative;
+  width: 100%;
   margin-top: 200px;
-  left: 0;
-  max-width: 1200px;
   height: 300px;
   padding: 20px 0px;
   background-color: #99565F;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  box-sizing: border-box;
 }

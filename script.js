@@ -1,17 +1,19 @@
 // main.js
 
-// Load header dynamically
 fetch('header.html')
-  .then(response => response.text())
+  .then(response => {
+    if (!response.ok) throw new Error('Header not found');
+    return response.text();
+  })
   .then(data => {
     document.getElementById('header-container').innerHTML = data;
-
-    // Highlight active link automatically
-    const currentPage = window.location.pathname.split('/').pop();
-    document.querySelectorAll('#header-container nav a').forEach(link => {
-      if(link.getAttribute('href') === currentPage) {
-        link.classList.add('active');
-      }
-    });
   })
-  .catch(err => console.error('Failed to load header:', err));
+  .catch(error => console.error(error));
+
+  document.querySelector('.left-side').addEventListener('click', () => {
+  window.location.href = 'uiux.html';
+});
+
+document.querySelector('.right-side').addEventListener('click', () => {
+window.location.href = 'illustration.html';
+});
