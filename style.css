@@ -213,6 +213,14 @@ header{
   margin: 0;
 }
 
+/* allow for links to passthrough overlay (making them linkable) */
+.left-side::before,
+.right-side::before,
+.left-side::after,
+.right-side::after {
+  pointer-events: none;
+}
+
 /* UIUX work */
 
 .UXwork{
@@ -270,14 +278,52 @@ header{
   background-color: #99565F;
 }
 
-footer{
-  position: relative;
+footer {
   width: 100%;
-  margin-top: 200px;
-  height: 300px;
-  padding: 20px 0px;
+  margin-top: 100px;
   background-color: #99565F;
+  color: white;
+  padding-top: 100px;
+}
+
+.footer-container {
+  max-width: 1200px;
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  box-sizing: border-box;
+  flex-wrap: wrap;
+}
+
+.footerNav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+.footerNav a {
+  text-decoration: none;
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.footerNav a:hover {
+  color: #ddd;
+}
+
+.socialIcons {
+  display: flex;
+  gap: 15px;
+}
+
+.socialIcons a {
+  font-size: 24px;
+  color: white;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.socialIcons a:hover {
+  color: #ddd;
+  transform: scale(1.2);
 }
